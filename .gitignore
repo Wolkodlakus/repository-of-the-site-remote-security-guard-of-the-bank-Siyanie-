@@ -1,4 +1,4 @@
 .replit
 poetry.lock
 pyproject.toml
-.idea/*
+.idea/
