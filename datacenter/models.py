@@ -20,8 +20,8 @@ class Visit(models.Model):
     entered_at = models.DateTimeField()
     leaved_at = models.DateTimeField(null=True)
 
-    def format_duration(self,duration):
-        sday= ''
+    def format_duration(self, duration):
+        sday = ''
         if duration.days > 0:
             sday = str(duration.days)+'д '
         shour = str(duration.seconds // 3600)+'ч '
@@ -36,12 +36,12 @@ class Visit(models.Model):
         else:
             return localtime(self.leaved_at) - localtime(self.entered_at)
     
-    def is_long (self, minutes=60):
+    def is_long(self, minutes=60):
         return self.get_duration().total_seconds() >= minutes*60
 
     def __str__(self):
         return '{user} entered at {entered} {leaved}'.format(
             user=self.passcard.owner_name,
             entered=self.entered_at,
-            leaved= 'leaved at ' + str(self.leaved_at) if self.leaved_at else 'not leaved'
+            leaved='leaved at ' + str(self.leaved_at) if self.leaved_at else 'not leaved'
         )
