@@ -8,22 +8,22 @@ from dotenv import load_dotenv
 
 env = Env()
 env.read_env()
-load_dotenv()
 
-DB_URL = os.getenv('DB_URL')
+DB_URL = env('DB_URL')
 
 DATABASES = {'default': dj_database_url.config(default=DB_URL)}
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = env.bool('DEBUG_DJANGO', 'False')
+DEBUG = env.bool('DEBUG_DJANGO', False)
+
 
 ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+print(ALLOWED_HOSTS)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
