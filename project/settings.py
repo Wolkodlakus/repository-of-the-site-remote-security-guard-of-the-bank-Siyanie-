@@ -23,7 +23,7 @@ DEBUG = env.bool('DEBUG_DJANGO', False)
 ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-print(ALLOWED_HOSTS)
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [

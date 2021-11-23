@@ -25,7 +25,13 @@ pip install -r requirements.txt
 DB_URL = 'postgres://USER:PASSWORD@HOST:PORT/NAME'
 ```
 * DEBUG_DJANGO - стандартная переменная Django. TRUE - для тестирования, false - для боевого режима
-* SECRET_KEY - стандартная переменная Django
+* SECRET_KEY - стандартная переменная Django, представляющая набор случайных символов. Например:
+```python
+    SECRET_KEY=qolwvjicds5p53gvod1pyrz*%2uykjw&a^&c4moab!w=&16ou7
+```
 * ALLOWED_HOSTS - список хостов/доменов, для которых может работать текущий сайт.
-Перечислять нужно просто через запятую, без обрамления кавычками
+Перечислять нужно просто через запятую, без обрамления кавычками. Например:
+```python
+    ALLOWED_HOSTS=localhost,127.0.0.1
+```
  
